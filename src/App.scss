@@ -1,6 +1,8 @@
 @import './components/common/styles/variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700,800,900');
 
 .App {
+	font-family: 'Muli', "Mplus 1p", sans-serif;
   text-align: center;
   color: $font-color;
 }

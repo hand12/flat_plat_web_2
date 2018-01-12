@@ -1,0 +1,8 @@
+@mixin border-bottom-with_grad {
+	&:after {
+		content: '';
+		display: block;
+		height: 1px;
+		background: linear-gradient(135deg, $main-color, $gradiation-main-color);
+	}
+}
