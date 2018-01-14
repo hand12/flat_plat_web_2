@@ -1,8 +1,38 @@
-@import './components/common/styles/variables.scss';
+@import './assets/stylesheets/variables.scss';
 @import url('https://fonts.googleapis.com/css?family=Muli:400,700,800,900');
 
 .App {
 	font-family: 'Muli', "Mplus 1p", sans-serif;
   text-align: center;
-  color: $font-color;
+	color: $font-color;
+}
+
+input {
+	color: $font-color;
+	border-style: none;
+	outline: none;
+	outline-style: none;
+	box-shadow: none;
+	line-height: 1rem;
+}
+
+textarea {
+	color: $font-color;
+	border-style: none;
+	outline: none;
+}
+
+button{
+	color: $font-color;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+	appearance: none;
+	line-height: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }

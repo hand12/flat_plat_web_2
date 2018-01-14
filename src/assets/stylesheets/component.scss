@@ -1,0 +1,64 @@
+@import './variables.scss';
+@import './mixin.scss';
+
+
+@keyframes popUp {
+	0% { transform: translateY(800px) }
+	60% { transform: translateY(-50px) }
+	100% { transform: translateY(0) }
+}
+
+@mixin button {
+	color: white;
+	$font-size: 20px;
+	font-size: $font-size;
+	line-height: $font-size * 2;
+	font-family: 'Muli', "Mplus 1p", sans-serif;
+	padding: 5px 30px;
+	margin: 0 10px;
+	display: inline-block;
+	box-shadow: $material-button-shadow;
+	background: $gradiation-background;
+	position: relative;
+	overflow: hidden;
+	transition: 0.2s;
+	&:hover {
+		box-shadow: rgba(0, 0, 0, 0.12) 1px 2px 8px, rgba(0, 0, 0, 0.12) 1px 2px 6px;
+		padding: 5px 50px;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		transition: 0.2s;
+		background: rgba(0, 0, 0, 0.12);
+	}
+	&:hover:after {
+		transform: translate(100%);
+	}
+}
+
+.buttons {
+	text-align: center;
+	margin: 20px 0;
+}
+
+.modal_panel {
+	box-shadow: $material-panel-shadow;
+	padding: 50px;
+	animation-name: popUp;
+	animation-duration: 0.3s;
+	animation-timing-function: ease;
+}
+
+.post_button {
+	@include button;
+}
+
+.modfy_button {
+	@include button;
+	background: $gradiation-complentary-color-background;
+}
