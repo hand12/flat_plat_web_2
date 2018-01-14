@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './left_container.scss';
 
-const LeftContainer = () => (
+const LeftContainer = (props) => (
 	<div className={ styles.left_container } >
 		<div className={ styles.profile_image }>
 			<img src="https://pbs.twimg.com/profile_images/919957605002264577/3v0U4Nem.jpg" />
@@ -22,7 +22,8 @@ const LeftContainer = () => (
 			</div>
 		</div>
 		<div className={ styles.bottom_buttons }>
-			<span className={ styles.button } ><i className="fa fa-plus-square-o" aria-hidden="true"></i></span>
+			{ console.log(props) }
+			<span className={ styles.button } onClick={ () => console.log("hoge") }><i className="fa fa-plus-square-o" aria-hidden="true"></i></span>
 			<span className={ styles.button } ><i className="fa fa-user-circle-o" aria-hidden="true"></i></span>
 			<span className={ styles.button } ><i className="fa fa-comments-o" aria-hidden="true"></i></span>
 		</div>

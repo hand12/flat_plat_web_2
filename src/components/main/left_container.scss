@@ -5,7 +5,7 @@
 $profile_image-size: 250px;
 
 .left_container {
-	z-index: -1;
+	// z-index: -1;
 	position: relative;
 	min-width: $left_container-size;
 	height: 100vh;
@@ -71,6 +71,7 @@ $profile_image-size: 250px;
 }
 
 .tag {
+	z-index: 1;
 	font-weight: lighter;
 	padding: 4px 10px;
 	margin-right: 10px;
