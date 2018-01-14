@@ -2,8 +2,6 @@ import React from 'react';
 import styles from './calendar.scss';
 
 import DatePicker from 'material-ui/DatePicker';
-import Toggle from 'material-ui/Toggle';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 

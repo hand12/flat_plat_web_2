@@ -1,39 +1,48 @@
-@import './variables.scss';
-@import './mixin.scss';
+@import '../../../assets/stylesheets/variables.scss';
+@import '../../../assets/stylesheets/mixin.scss';
 
 .card {
-	width: 50%;
-	min-width: 500px;
+	width: 400px;
 	margin: 10px auto;
 	box-shadow: $material-panel-shadow;
 	padding: 30px 50px;
 }
 
+@keyframes requested {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(5deg);
+	}
+}
+
+@keyframes received {
+	0% {
+		transform: rotate(0)
+	}
+	100% {
+		transform: rotate(-5deg) translateX(-50%);
+	}
+}
+
+.requested_card {
+	animation-name: requested;
+	animation-duration: 0.3s;
+	animation-timing-function: ease;
+	animation-delay: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+.received_card {
+	animation-name: received;
+	animation-duration: 0.3s;
+	animation-timing-function: ease;
+}
+
 .image {
-	$size: 150px;
-	width: $size;
-	height: $size;
-	margin: 0 auto;
-	position: relative;
-	img {
-		width: inherit;
-		height: inherit;
-		object-fit: cover;
-		border-radius: $size / 2;
-		box-sizing: border-box;
-	}
-	&:before {
-		z-index: -1;
-		content: '';
-		position: absolute;
-		top: -2px;
-		left: -2px;
-		right: -2px;
-		bottom: -2px;
-		border-radius: $size / 2;
-		display: block;
-		background: $gradiation-background;
-	}
+	@include border-gradient-image(150px);
 }
 
 .location {

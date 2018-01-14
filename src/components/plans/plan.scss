@@ -1,0 +1,95 @@
+@import '../../assets/stylesheets/variables.scss';
+@import '../../assets/stylesheets/mixin.scss';
+@import '../../assets/stylesheets/component.scss';
+
+.modal_panel {
+	padding: 20px;
+	margin-bottom: 50px;
+	transition: 0.2s;
+	position: relative;
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.05);
+		box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2), 1px 10px 75px 0 rgba(0, 0, 0, 0.1);
+	}
+}
+
+.plan {
+	display: flex;
+	justify-content: space-between;
+}
+
+$container-size: 200px;
+.left_container {
+	width: $container-size;
+	margin-right: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.image {
+	@include border-gradient-image(120px);
+	margin: 10px 0;
+}
+
+.name {
+	$font-size: 14px;
+	font-size: $font-size;
+	line-height: $font-size * 2;
+	font-weight: bold;
+}
+
+.text {
+	width: 80%;
+	$font-size: 12px;
+	font-size: $font-size;
+	line-height: $font-size * 2;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.right_container {
+	flex-grow: 4;
+	position: relative;
+}
+
+.top {
+	border-bottom: 1px solid $border-color;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.location {
+	$font-size: 24px;
+	font-size: $font-size;
+	line-height: $font-size * 2;
+	font-weight: bold;
+}
+
+.date {
+	$font-size: 16px;
+	font-size: $font-size;
+	line-height: $font-size * 2;
+}
+
+.description {
+	$font-size: 16px;
+	font-size: $font-size;
+	line-height: $font-size * 2;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 5;
+	overflow: hidden;
+}
+
+.bottom {
+	font-size: 12px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}

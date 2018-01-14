@@ -6,3 +6,30 @@
 		background: linear-gradient(135deg, $main-color, $gradiation-main-color);
 	}
 }
+
+@mixin border-gradient-image($size: 150px) {
+	width: $size;
+	height: $size;
+	margin: 0 auto;
+	position: relative;
+	img {
+		width: inherit;
+		height: inherit;
+		object-fit: cover;
+		border-radius: $size / 2;
+		box-sizing: border-box;
+		border: 2px solid white;
+	}
+	&:before {
+		z-index: -1;
+		content: '';
+		position: absolute;
+		top: -2px;
+		left: -2px;
+		right: -2px;
+		bottom: -2px;
+		border-radius: $size / 2;
+		display: block;
+		background: $gradiation-background;
+	}
+}
