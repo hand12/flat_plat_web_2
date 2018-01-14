@@ -1,0 +1,124 @@
+@import '../../assets/stylesheets/variables.scss';
+@import '../../assets/stylesheets/mixin.scss';
+@import '../../assets/stylesheets/component.scss';
+
+$profile_image-size: 250px;
+
+.left_container {
+	z-index: -1;
+	position: relative;
+	min-width: $left_container-size;
+	height: 100vh;
+	background: $background-color-black;
+	box-shadow: 1px 0 16px 1px rgba(0, 0, 0, 0.6), 20px 0 50px 0 rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile_image {
+	width: $profile_image-size;
+	height: $profile_image-size;
+	overflow: hidden;
+	margin-bottom: 10px;
+	img {
+		box-sizing: border-box;
+		width: inherit;
+		height: inherit;
+		object-fit: cover;
+		border-radius: $profile_image-size / 2;
+		border: 1px solid lighten($background-color-black, 50);
+	}
+}
+
+.profile_introduce {
+	width: $profile_image-size;
+	color: white;
+	text-align: left;
+}
+
+.name {
+	$name-size: 18px;
+	font-size: $name-size;
+	line-height: $name-size * 2;
+	margin-bottom: 20px;
+	@include border-bottom-with_grad;
+}
+
+.introduce_text {
+	$text-size: 12px;
+	font-size: $text-size;
+	line-height: $text-size * 2;
+	font-weight: lighter;
+	height: 100px;
+	overflow: hidden;
+	position: relative;
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: linear-gradient(225deg, $main-color, $gradiation-main-color);
+	}
+}
+
+.tags {
+	margin-top: 10px;
+}
+
+.tag {
+	font-weight: lighter;
+	padding: 4px 10px;
+	margin-right: 10px;
+	font-size: 11px;
+	border-radius: 30px;
+	background: $background-color-black;
+	position: relative;
+	&:last-child {
+		margin-right: 0;
+	}
+	&:before {
+		z-index: -1;
+		content: '';
+		position: absolute;
+		border-radius: inherit;
+		top: -1px;
+		left: -1px;
+		right: -1px;
+		bottom: -1px;
+		background: $gradiation-background;
+	}
+}
+
+.bottom_buttons {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: lighten($background-color-black, 10);;
+	display: flex;
+	justify-content: space-between;
+}
+
+.button {
+	$icon-box-size: 80px;
+	flex-grow: 1;
+	font-size: 32px;
+	line-height: $icon-box-size;
+	height: $icon-box-size;
+	box-sizing: border-box;
+	border-right: 1px solid lighten($background-color-black, 5);
+	cursor: pointer;
+	transition: 0.2s;
+	&:hover {
+		color: white;
+		font-size: 48px;
+	}
+	&:last-child {
+		border-right: none;
+	} 
+}
