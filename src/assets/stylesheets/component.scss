@@ -49,6 +49,8 @@
 .modal_panel {
 	box-shadow: $material-panel-shadow;
 	padding: 50px;
+	max-height: 65vh;
+	overflow-y: scroll;
 	animation-name: popUp;
 	animation-duration: 0.3s;
 	animation-timing-function: ease;

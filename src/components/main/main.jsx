@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './main.scss';
 
-import CalendarField from '../calendar/calendar';
+import PlanFormPanel from '../post_form_panel/post_form_panel';
 import ConfirmPanel from '../confirm_panel/confirm_panel';
 
 const Main = () => (
@@ -44,27 +44,8 @@ const LeftContainer = () => (
 const RightContainer = () => (
 	<div className={ styles.right_container} >
 		<h1>プランの作成</h1>
-		<div className={ styles.modal_panel }>
-			<LocationField />
-			<CalendarField />
-			<DescriptionField />
-			<Buttons />
-		</div>
+		<PlanFormPanel />
 		<ConfirmPanel />
-	</div>
-)
-
-const LocationField = () => (
-	<div className={ styles.input_container }>
-		<label htmlFor="location">行き先</label>
-		<input id="location" placeholder="北海道旭川市"/>
-	</div>
-)
-
-const DescriptionField = () => (
-	<div className={ styles.input_container }>
-		<label htmlFor="description">どんな旅にしたいですか？</label>
-		<textarea id="description" placeholder="美味しいものをたくさん食べる旅にしたいです！" rows="5"/>
 	</div>
 )
 
