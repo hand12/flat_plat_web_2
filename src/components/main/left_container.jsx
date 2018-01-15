@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './left_container.scss';
 
+import { Link } from 'react-router-dom'
+
 const LeftContainer = (props) => (
 	<div className={ styles.left_container } >
 		<div className={ styles.profile_image }>
@@ -18,12 +20,13 @@ const LeftContainer = (props) => (
 			<div className={ styles.tags }>
 				<span className={ styles.tag }>カメラ</span>
 				<span className={ styles.tag }>デザイン</span>
-				<span className={ styles.tag }>bake</span>
+				<span className={ styles.tag }>bike</span>
 			</div>
 		</div>
 		<div className={ styles.bottom_buttons }>
 			{ console.log(props) }
-			<span className={ styles.button } onClick={ () => console.log("hoge") }><i className="fa fa-plus-square-o" aria-hidden="true"></i></span>
+			<Link to="/plan/new"><span className={ styles.button } ><i className="fa fa-plus-square-o" aria-hidden="true"></i></span></Link>
+			{/* <span className={ styles.button } onClick={ () => props.history.push("/plan/new") }><i className="fa fa-plus-square-o" aria-hidden="true"></i></span> */}
 			<span className={ styles.button } ><i className="fa fa-user-circle-o" aria-hidden="true"></i></span>
 			<span className={ styles.button } ><i className="fa fa-comments-o" aria-hidden="true"></i></span>
 		</div>

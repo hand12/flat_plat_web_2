@@ -3,16 +3,18 @@ import styles from './main.scss';
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { withRouter } from 'react-router-dom'
+
 import * as PlanActionCreators from '../../actions/actions'
 
 import LeftContainer from './left_container';
 import RightContainer from './right_container';
 
-const Main = () => (
+const Main = (props) => (
   <div className={ styles.main } >
     <div className={ styles.container } >
-			<LeftContainer />
-			<RightContainer />
+      <LeftContainer { ...props } />
+      <RightContainer { ...props } />
     </div>
   </div>
 )
@@ -25,4 +27,4 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(PlanActionCreators, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Main));

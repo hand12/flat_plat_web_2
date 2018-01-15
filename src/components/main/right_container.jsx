@@ -11,14 +11,12 @@ import Request from '../plans/request';
 const RightContainer = () => (
 		<div className={ styles.right_container} >
 			<h1>プランの作成</h1>
-			<Router>
-				<Switch>
-					<Route path="/plan/new" component={ PlanFormPanel } />
-					<Route path="/plan/confirm" component={ ConfirmPanel } />
-					<Route path="/plan/:id/request" component={ Request } />
-					<Route path="/plans" component={ Plans } />
-				</Switch>
-			</Router>
+			<Switch>
+				<Route path="/plan/new" component={ PlanFormPanel } />
+				<Route path="/plan/confirm" component={ ConfirmPanel } />
+				<Route path="/plan/:id/request" component={ Request } />
+				<Route path="/plans" component={ Plans } />
+			</Switch>
 		</div>
 )
 
