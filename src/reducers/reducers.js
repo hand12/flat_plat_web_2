@@ -1,35 +1,36 @@
 import { combineReducers } from 'redux'
 
 import {
-	TOGGLE_POST_PLAN_PANEL,
+	SET_PLAN,
 } from '../actions/actions';
 
 const initialState = {
-	isActivePostPlanPanel: false
+	plan: {
+		location: '',
+		departure_date: new Date,
+		return_date: (new Date).setDate(new Date() + 3),
+		description: '',
+	}
 }
 
 
 
-const post = (state = initialState, action) => {
+const Plan = (state = initialState, action) => {
 	switch(action.type) {
-		case TOGGLE_POST_PLAN_PANEL:
-			console.log("toggle呼ばれた")
-			if (state.isActivePostPlanPanel) {
-				return Object.assign({}, state, {
-					isActivePostPlanPanel: false
-				})
-			} else {
-				return Object.assign({}, state, {
-					isActivePostPlanPanel: true
-				})
-			}
+		case SET_PLAN:
+			console.log("SET_PLANよばれた")
+			console.log(action)
+			return state
+			// return Object.assign({}, state, {
+			// 	isActivePostPlanPanel: false
+			// })
 		default:
 			return state
 	}
 }
 
 const rootReducer = combineReducers({
-	post,
+	Plan,
 })
 
 export default rootReducer

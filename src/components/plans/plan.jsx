@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './plan.scss';
 
-const Plan = () => (
-	<div className={ styles.modal_panel }>
+const Plan = (props) => (
+	<div className={ styles.modal_panel } onClick={ () => (props.history.push('/plan/10/request')) }>
 		<div className={ styles.plan }>
 			<div className={ styles.left_container }>
 				<div className={ styles.image }>
@@ -27,6 +27,10 @@ const Plan = () => (
 					<span className={ styles.date }>2018/1/13 ~ 2018/1/14</span>
 				</div>
 				<div className={ styles.description }>
+					旭川動物園に行きたいです！あと美味しいものをたくさん食べたいです！！
+					<br />
+					旭川動物園に行きたいです！あと美味しいものをたくさん食べたいです！！
+					<br />
 					旭川動物園に行きたいです！あと美味しいものをたくさん食べたいです！！
 					<br />
 					旭川動物園に行きたいです！あと美味しいものをたくさん食べたいです！！

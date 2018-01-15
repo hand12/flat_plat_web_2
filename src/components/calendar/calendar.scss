@@ -27,6 +27,11 @@
 			color: $main-color;
 			cursor: pointer;
 		}
+		&:after {
+			content: '\f272';
+			font-family: FontAwesome;
+			margin-left: 5px;
+		}
 	}
 }
 
@@ -38,7 +43,7 @@
 
 .right_date_container {
 	flex-grow: 1;
-	padding-left: 50px; 
+	padding-left: 50px;
 }
 
 .calendar {

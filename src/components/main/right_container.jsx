@@ -8,14 +8,15 @@ import ConfirmPanel from '../confirm_panel/confirm_panel';
 import Plans from '../plans/plans';
 import Request from '../plans/request';
 
-const RightContainer = () => (
+const RightContainer = (props) => (
 		<div className={ styles.right_container} >
 			<h1>プランの作成</h1>
 			<Switch>
-				<Route path="/plan/new" component={ PlanFormPanel } />
+				<Route path="/plan/new" component={ (props) => <PlanFormPanel { ...props }/> } />
 				<Route path="/plan/confirm" component={ ConfirmPanel } />
 				<Route path="/plan/:id/request" component={ Request } />
-				<Route path="/plans" component={ Plans } />
+				<Route path="/plans" component={ (props) => <Plans { ...props }/> } />
+				<Route path="/" component={ Plans } />
 			</Switch>
 		</div>
 )

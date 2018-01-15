@@ -2,12 +2,12 @@ import React from 'react';
 
 import Plan from './plan';
 
-const Plans = () => (
+const Plans = (props) => (
 	<div>
-		<Plan />
-		<Plan />
-		<Plan />
-		<Plan />
+		<Plan { ...props } />
+		<Plan { ...props } />
+		<Plan { ...props } />
+		<Plan { ...props } />
 	</div>
 )
 

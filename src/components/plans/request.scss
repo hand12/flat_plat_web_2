@@ -7,6 +7,22 @@
 }
 
 .plan_cards {
+	position: relative;
 	display: flex;
 	justify-content: space-around;
+	&:after {
+		position: absolute;
+		top: 15%;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		content: '\f054';
+		font-family: FontAwesome;
+		font-size: 92px;
+		text-align: center;
+		color: $main-color;
+		background: linear-gradient(0, $main-color, $gradiation-main-color);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
 }

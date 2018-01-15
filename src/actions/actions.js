@@ -1,8 +1,8 @@
-export const TOGGLE_POST_PLAN_PANEL = 'TOGGLE_POST_PLAN_PANEL'
+export const SET_PLAN = 'SET_PLAN'
 
-export const toggle_post_plan_panel = (value) => {
+export const set_plan = (value) => {
 	return {
-		type: TOGGLE_POST_PLAN_PANEL,
+		type: SET_PLAN,
 		value
 	}
 }
