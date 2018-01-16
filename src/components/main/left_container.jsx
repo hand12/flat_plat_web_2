@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './left_container.scss';
 
-import { Link } from 'react-router-dom'
-
 const LeftContainer = (props) => (
 	<div className={ styles.left_container } >
 		<div className={ styles.profile_image }>

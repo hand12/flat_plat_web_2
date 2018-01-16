@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './right_container.scss';
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import PlanFormPanel from '../post_form_panel/post_form_panel';
 import ConfirmPanel from '../confirm_panel/confirm_panel';

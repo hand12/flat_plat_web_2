@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 
 import {
 	SET_PLAN,
-} from '../actions/actions';
+} from '../actions/action_types';
 
 const initialState = {
 	plan: {

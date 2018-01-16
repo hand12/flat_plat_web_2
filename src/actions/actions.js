@@ -1,4 +1,4 @@
-export const SET_PLAN = 'SET_PLAN'
+import { SET_PLAN } from './action_types'
 
 export const set_plan = (value) => {
 	return {
