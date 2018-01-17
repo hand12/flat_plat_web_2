@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './post_form_panel.scss';
+import styles from './plan_form_panel.scss';
 
 import CalendarField from '../calendar/calendar';
 

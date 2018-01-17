@@ -7,8 +7,8 @@ import {
 const initialState = {
 	plan: {
 		location: '',
-		departure_date: new Date,
-		return_date: (new Date).setDate(new Date() + 3),
+		departure_date: '',
+		return_date: '',
 		description: '',
 	}
 }

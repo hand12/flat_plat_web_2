@@ -10,8 +10,6 @@ import * as PlanActionCreators from '../../actions/actions'
 import LeftContainer from './left_container';
 import RightContainer from './right_container';
 
-console.log(PlanActionCreators.set_plan)
-
 const Main = (props) => (
   <div className={ styles.main } >
     <div className={ styles.container } >
@@ -26,7 +24,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return { actions: bindActionCreators(PlanActionCreators, dispatch) }
+  return bindActionCreators(PlanActionCreators, dispatch)
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main))
