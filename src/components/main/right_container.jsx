@@ -11,12 +11,12 @@ import Request from '../plans/request';
 const RightContainer = (props) => (
 	<div className={ styles.right_container} >
 		<h1>プランの作成</h1>
+		{ console.log(props) }
 		<Switch>
 			<Route path="/plan/new" component={ (props) => <PlanFormPanel { ...props }/> } />
-			<Route path="/plan/confirm" component={ ConfirmPanel } />
-			<Route path="/plan/:id/request" component={ Request } />
+			<Route path="/plan/confirm" component={ (props) => <ConfirmPanel { ...props }/> } />
+			<Route path="/plan/:id/request" component={ (props) => <Request { ...props } /> } />
 			<Route path="/plans" component={ (props) => <Plans { ...props }/> } />
-			<Route path="/" component={ Plans } />
 		</Switch>
 	</div>
 )

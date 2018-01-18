@@ -31,10 +31,28 @@ const DescriptionField = () => (
 	</div>
 )
 
-const Buttons = (props) => (
-	<div className={ styles.buttons }>
-		<button className={ styles.post_button } onClick={ () => (props.history.push('/plan/confirm')) }>投稿する</button>
-	</div>
-)
+class Buttons extends React.Component {
+	onSubmit = () => {
+		let location = document.getElementById("location").value
+		let description = document.getElementById("description").value
+
+		let plan = {
+			location: location,
+			description: description
+		}
+
+		// this.props.set_plan(plan)
+		// console.log(this.props)
+		this.props.history.push("/plan/confirm")
+	}
+
+	render () {
+		return (
+			<div className={ styles.buttons }>
+				<button className={ styles.post_button } onClick={ () => (this.onSubmit()) }>投稿する</button>
+			</div>
+		)
+	}
+}
 
 export default PlanFormPanel;

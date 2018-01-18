@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { routerReducer } from 'react-router-redux'
 
 import {
 	SET_PLAN,
@@ -21,9 +22,6 @@ const Plan = (state = initialState, action) => {
 			console.log("SET_PLANよばれた")
 			console.log(action)
 			return state
-			// return Object.assign({}, state, {
-			// 	isActivePostPlanPanel: false
-			// })
 		default:
 			return state
 	}
@@ -31,6 +29,7 @@ const Plan = (state = initialState, action) => {
 
 const rootReducer = combineReducers({
 	Plan,
+	router: routerReducer
 })
 
 export default rootReducer
