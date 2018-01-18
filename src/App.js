@@ -4,6 +4,7 @@ import * as PlanActionCreators from './actions/actions'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { withRouter } from 'react-router-dom'
 
 import Header from "./components/common/header";
 import Main from "./components/main/main";
@@ -15,7 +16,7 @@ class App extends Component {
     return (
 			<div className={ styles.App }>
 				<Header />
-				<Main />
+				<Main { ...this.props } />
 			</div>
     );
   }
@@ -29,4 +30,4 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(PlanActionCreators, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

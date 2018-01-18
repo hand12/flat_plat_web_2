@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './main.scss';
 
-import { withRouter } from 'react-router-dom'
-
 import LeftContainer from './left_container';
 import RightContainer from './right_container';
 
@@ -15,4 +13,4 @@ const Main = (props) => (
   </div>
 )
 
-export default withRouter(Main)
+export default Main;

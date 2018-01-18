@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux'
-import { routerReducer } from 'react-router-redux'
 
 import {
 	SET_PLAN,
@@ -29,7 +28,6 @@ const Plan = (state = initialState, action) => {
 
 const rootReducer = combineReducers({
 	Plan,
-	router: routerReducer
 })
 
 export default rootReducer
