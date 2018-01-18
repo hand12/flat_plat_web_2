@@ -7,7 +7,6 @@ class PlanFormPanel extends React.Component {
 	render() {
 		return (
 			<div className={ styles.modal_panel }>
-				{ console.log(this.props) }
 				<LocationField { ...this.props }/>
 				<CalendarField { ...this.props }/>
 				<DescriptionField { ...this.props }/>
@@ -41,8 +40,7 @@ class Buttons extends React.Component {
 			description: description
 		}
 
-		// this.props.set_plan(plan)
-		// console.log(this.props)
+		this.props.set_plan(plan)
 		this.props.history.push("/plan/confirm")
 	}
 
