@@ -32,13 +32,9 @@ const DescriptionField = () => (
 
 class Buttons extends React.Component {
 	onSubmit = () => {
-		let location = document.getElementById("location").value
-		let description = document.getElementById("description").value
-
-		let plan = {
-			location: location,
-			description: description
-		}
+		let plan = Object.assign({}, this.props.plan)
+		plan.location = document.getElementById("location").value
+		plan.description = document.getElementById("description").value
 
 		this.props.set_plan(plan)
 		this.props.history.push("/plan/confirm")

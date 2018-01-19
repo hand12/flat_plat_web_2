@@ -15,19 +15,21 @@ const initialState = {
 
 
 
-const Plan = (state = initialState, action) => {
+const plan = (state = initialState, action) => {
 	switch(action.type) {
 		case SET_PLAN:
 			console.log("SET_PLANよばれた")
-			console.log(action)
-			return state
+			console.log(action.value)
+			return Object.assign({}, state, {
+				plan: action.value
+			})
 		default:
 			return state
 	}
 }
 
 const rootReducer = combineReducers({
-	Plan,
+	plan,
 })
 
 export default rootReducer

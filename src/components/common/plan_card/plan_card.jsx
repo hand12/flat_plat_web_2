@@ -10,7 +10,7 @@ class PlanCard extends React.Component {
 				</div>
 				<div className={ styles.location }>
 					<h2>行き先</h2>
-					<p>北海道旭川市</p>
+					<p>{ this.props.plan.location }</p>
 				</div>
 				<div className={ styles.date }>
 					<h2>日程</h2>
@@ -25,9 +25,8 @@ class PlanCard extends React.Component {
 				</div>
 				<div className={ styles.description_item }>
 					<h2>どんな旅にしたいですか？</h2>
-					<p>美味しいものをたくさん食べる旅にしたいです!
-					<br />
-					綺麗な写真もたくさん撮りたいです！</p>
+					{ console.log(this.props) }
+					<p>{ this.props.plan.description }</p>
 				</div>
 			</div>
 		)
