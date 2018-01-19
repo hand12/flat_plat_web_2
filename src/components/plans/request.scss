@@ -21,6 +21,7 @@
 		font-size: 92px;
 		text-align: center;
 		color: $main-color;
+		filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.24)) drop-shadow(0 0 24px rgba(0, 0, 0, 0.12));
 		background: linear-gradient(0, $main-color, $gradiation-main-color);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
