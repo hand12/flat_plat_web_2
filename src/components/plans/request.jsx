@@ -3,11 +3,11 @@ import styles from './request.scss';
 
 import PlanCard from '../common/plan_card/plan_card';
 
-const Request = () => (
+const Request = (props) => (
 	<div className={ styles.modal_panel }>
 		<div className={ styles.plan_cards }>
-			<PlanCard />
-			<PlanCard />
+			<PlanCard { ...props } />
+			<PlanCard { ...props } />
 			<div className={ styles.arrow }></div>
 		</div>
 		<Buttons />
