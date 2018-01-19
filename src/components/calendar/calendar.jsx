@@ -17,8 +17,8 @@ class CalendarField extends React.Component {
 	constructor(props) {
     super(props);
 
-    const minDate = new Date();
-    const maxDate = new Date();
+    const minDate = props.plan.departure_date;
+    const maxDate = props.plan.return_date;
     minDate.setFullYear(minDate.getFullYear() - 1);
     minDate.setHours(0, 0, 0, 0);
     maxDate.setFullYear(maxDate.getFullYear() + 1);
@@ -49,7 +49,7 @@ class CalendarField extends React.Component {
       [event.target.name]: toggled,
     });
 	};
-	
+
 	formatDate(date){
 		return date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate();
 	}
@@ -59,7 +59,7 @@ class CalendarField extends React.Component {
 			<div className={ styles.date_container }>
 				<div className={ styles.left_date_container }>
 					<div className={ styles.date_field }>
-						<label htmlFor="start_date">出発日</label>
+						<label htmlFor="departure_date">出発日</label>
 						<MuiThemeProvider muiTheme={ muiTheme } >
 							<DatePicker
 								onChange={this.handleChangeMinDate}
@@ -69,7 +69,7 @@ class CalendarField extends React.Component {
 								mode="landscape"
 								autoOk={this.state.autoOk}
 								formatDate={this.formatDate}
-								id="start_date"
+								id="departure_date"
 								className={ styles.calendar }
 							/>
 						</MuiThemeProvider>
@@ -82,12 +82,12 @@ class CalendarField extends React.Component {
 							<DatePicker
 								onChange={this.handleChangeMaxDate}
 								minDate={this.state.minDate}
-								defaultDate={this.state.minDate}
+								defaultDate={this.state.maxDate}
 								disableYearSelection={this.state.disableYearSelection}
 								mode="landscape"
 								autoOk={this.state.autoOk}
 								formatDate={this.formatDate}
-								id="start_date"
+								id="return_date"
 								className={ styles.calendar }
 							/>
 						</MuiThemeProvider>

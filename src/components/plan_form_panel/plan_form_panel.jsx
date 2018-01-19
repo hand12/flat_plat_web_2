@@ -16,25 +16,30 @@ class PlanFormPanel extends React.Component {
 	}
 }
 
-const LocationField = () => (
+const LocationField = (props) => (
 	<div className={ styles.input_container }>
 		<label htmlFor="location">行き先</label>
-		<input id="location" placeholder="北海道旭川市"/>
+		<input id="location" placeholder="北海道旭川市" defaultValue={ props.plan.location } />
 	</div>
 )
 
-const DescriptionField = () => (
+const DescriptionField = (props) => (
 	<div className={ styles.input_container }>
 		<label htmlFor="description">どんな旅にしたいですか？</label>
-		<textarea id="description" placeholder="美味しいものをたくさん食べる旅にしたいです！" rows="5"/>
+		<textarea id="description" placeholder="美味しいものをたくさん食べる旅にしたいです！" rows="5"　defaultValue={ props.plan.description }　/>
 	</div>
 )
 
 class Buttons extends React.Component {
 	onSubmit = () => {
 		let plan = Object.assign({}, this.props.plan)
+		let departure_date = document.getElementById("departure_date").value
+		let return_date = document.getElementById("return_date").value
+
 		plan.location = document.getElementById("location").value
 		plan.description = document.getElementById("description").value
+		plan.departure_date = new Date(departure_date)
+		plan.return_date = new Date(return_date)
 
 		this.props.set_plan(plan)
 		this.props.history.push("/plan/confirm")

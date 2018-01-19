@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './plan_card.scss';
 
+import dateToString from './date_formatter';
+
 class PlanCard extends React.Component {
 	render () {
 		return (
@@ -16,16 +18,15 @@ class PlanCard extends React.Component {
 					<h2>日程</h2>
 					<div className={ styles.dates }>
 						<div className={ styles.departure }>
-							出発: 2018/1/14
+							出発: { dateToString(this.props.plan.departure_date) }
 						</div>
 						<div className={ styles.return }>
-							帰宅: 2018/1/16
+							帰宅: { dateToString(this.props.plan.return_date) }
 						</div>
 					</div>
 				</div>
 				<div className={ styles.description_item }>
 					<h2>どんな旅にしたいですか？</h2>
-					{ console.log(this.props) }
 					<p>{ this.props.plan.description }</p>
 				</div>
 			</div>
