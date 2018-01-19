@@ -17,12 +17,10 @@ class CalendarField extends React.Component {
 	constructor(props) {
     super(props);
 
-    const minDate = props.plan.departure_date;
-    const maxDate = props.plan.return_date;
+		const minDate = new Date();
+    const maxDate = new Date();
     minDate.setFullYear(minDate.getFullYear() - 1);
-    minDate.setHours(0, 0, 0, 0);
     maxDate.setFullYear(maxDate.getFullYear() + 1);
-    maxDate.setHours(0, 0, 0, 0);
 
     this.state = {
       minDate: minDate,
@@ -64,7 +62,7 @@ class CalendarField extends React.Component {
 							<DatePicker
 								onChange={this.handleChangeMinDate}
 								maxDate={this.state.maxDate}
-								defaultDate={this.state.minDate}
+								defaultDate={this.props.plan.departure_date}
 								disableYearSelection={this.state.disableYearSelection}
 								mode="landscape"
 								autoOk={this.state.autoOk}
@@ -82,7 +80,7 @@ class CalendarField extends React.Component {
 							<DatePicker
 								onChange={this.handleChangeMaxDate}
 								minDate={this.state.minDate}
-								defaultDate={this.state.maxDate}
+								defaultDate={this.props.plan.return_date}
 								disableYearSelection={this.state.disableYearSelection}
 								mode="landscape"
 								autoOk={this.state.autoOk}
