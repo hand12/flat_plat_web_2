@@ -35,7 +35,7 @@ class LocationField extends React.Component {
 	}
 
 	set_pin = (e) => {
-		if(e.target.value.length <= 5) {
+		if(e.target.value.length == 0) {
 			return 
 		}
 		const params = new URLSearchParams()
@@ -104,7 +104,7 @@ class Buttons extends React.Component {
 		plan.departure_date = new Date(departure_date)
 		plan.return_date = new Date(return_date)
 
-		this.props.set_plan(plan)
+		this.props.setPlan(plan)
 		this.props.history.push("/plan/confirm")
 	}
 

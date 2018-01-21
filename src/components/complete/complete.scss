@@ -1,0 +1,10 @@
+@import '../../assets/stylesheets/variables.scss';
+@import '../../assets/stylesheets/mixin.scss';
+@import '../../assets/stylesheets/component.scss';
+
+.modal_panel {
+	text-align: center;
+	h1 {
+		margin: 0;
+	}
+}

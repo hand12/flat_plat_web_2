@@ -1,5 +1,6 @@
 import {
 	SET_PLAN,
+	FETCH_PLANS,
 } from '../actions/action_types';
 
 const initialState = () => {
@@ -27,6 +28,8 @@ const plan = (state = initialState(), action) => {
 			return Object.assign({}, state, {
 				...action.payload
 			})
+		case FETCH_PLANS:
+			return state
 		default:
 			return state
 	}
