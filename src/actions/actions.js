@@ -1,4 +1,4 @@
-import { SET_PLAN, FETCH_PLANS } from './action_types'
+import { SET_PLAN, SET_PLANS } from './action_types'
 
 
 export const setPlan = (payload) => {
@@ -8,9 +8,9 @@ export const setPlan = (payload) => {
 	}
 }
 
-export const fetchPlans = (payload) => {
+export const setPlans = (payload) => {
 	return {
-		type: FETCH_PLANS,
+		type: SET_PLANS,
 		payload
 	}
 }
