@@ -12,7 +12,7 @@ class PlanCard extends React.Component {
 				</div>
 				<div className={ styles.location }>
 					<h2>行き先</h2>
-					<p>{ this.props.plan.location }</p>
+					<p>{ this.props.plan.location.name }</p>
 				</div>
 				<div className={ styles.date }>
 					<h2>日程</h2>

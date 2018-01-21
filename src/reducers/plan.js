@@ -8,7 +8,11 @@ const initialState = () => {
   return_date.setDate(return_date.getDate() + 1)
 
   return {
-  	location: '',
+  	location: {
+			name: '',
+			lat: '',
+			lng: ''
+		},
     departure_date: departure_date,
     return_date: return_date,
     description: '',

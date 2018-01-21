@@ -10,7 +10,6 @@ import Request from '../plans/request';
 
 const RightContainer = (props) => (
 	<div className={ styles.right_container} >
-		<h1>プランの作成</h1>
 		<Switch>
 			<Route path="/plan/new" component={ () => <PlanFormPanel { ...props }/> } />
 			<Route path="/plan/confirm" component={ () => <ConfirmPanel { ...props }/> } />

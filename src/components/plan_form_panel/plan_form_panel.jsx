@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './plan_form_panel.scss';
 
+import Map from './map.jsx';
 import CalendarField from '../calendar/calendar';
+import { MY_API_KEY } from '../../.my_api_key';
 
 class PlanFormPanel extends React.Component {
 	render() {
@@ -16,17 +18,76 @@ class PlanFormPanel extends React.Component {
 	}
 }
 
-const LocationField = (props) => (
-	<div className={ styles.input_container }>
-		<label htmlFor="location">行き先</label>
-		<input id="location" placeholder="北海道旭川市" defaultValue={ props.plan.location } />
-	</div>
-)
+class LocationField extends React.Component {
+	constructor(props) {
+		super(props)
+		this.HOST = "https://maps.googleapis.com/maps/api/geocode/json"
+		this.state = {
+			location: {
+				lat: 35.9514,
+				lng: 139.975
+			},
+			defaultCenter: {
+				lat: 35.9514,
+				lng: 139.975
+			}
+		}
+	}
+
+	set_pin = (e) => {
+		if(e.target.value.length <= 5) {
+			return 
+		}
+		const params = new URLSearchParams()
+		const address = e.target.value.toString()
+		params.set('address', address)
+		params.append('key', MY_API_KEY)
+
+		if(address == '') {
+			return
+		}
+
+		fetch(this.HOST + `?${ params.toString() }`)
+		.then((response) => {
+			if(!response.ok) {
+				throw Error(response.statusText)
+			}
+			return response
+		})
+		.then((response) => response.json())
+		.then((responseData) => {
+			if((responseData.status == "ZERO_RESULTS")) {
+				console.log(responseData)
+				console.log("一件もなかった")
+				return
+			}
+			const location = responseData.results[0].geometry.location
+			this.setState({
+				location: {
+					lat: parseFloat(location.lat),
+					lng: parseFloat(location.lng),
+				}
+			})
+		})
+	}
+
+	render() {
+		return (
+			<div className={ styles.input_container }>
+				<label htmlFor="location">行き先</label>
+				<input id="location" placeholder="北海道旭川市" defaultValue={ this.props.plan.location.name } onChange={ (e) => { this.set_pin(e) } }/>
+				<input id="lat" type="hidden" defaultValue={ this.state.location.lat } />
+				<input id="lng" type="hidden" defaultValue={ this.state.location.lng } />
+				<Map isMarkerShown pin_location = { this.state.location } default_center={ this.state.defaultCenter } />
+			</div>
+		)
+	}
+}
 
 const DescriptionField = (props) => (
 	<div className={ styles.input_container }>
 		<label htmlFor="description">どんな旅にしたいですか？</label>
-		<textarea id="description" placeholder="美味しいものをたくさん食べる旅にしたいです！" rows="5"　defaultValue={ props.plan.description }　/>
+		<textarea id="description" placeholder="美味しいものをたくさん食べる旅にしたいです！" rows="2"　defaultValue={ props.plan.description }　/>
 	</div>
 )
 
@@ -36,7 +97,9 @@ class Buttons extends React.Component {
 		let departure_date = document.getElementById("departure_date").value
 		let return_date = document.getElementById("return_date").value
 
-		plan.location = document.getElementById("location").value
+		plan.location.name = document.getElementById("location").value
+		plan.location.lat = document.getElementById("lat").value
+		plan.location.lng = document.getElementById("lng").value
 		plan.description = document.getElementById("description").value
 		plan.departure_date = new Date(departure_date)
 		plan.return_date = new Date(return_date)
