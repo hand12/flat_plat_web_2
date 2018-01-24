@@ -10,16 +10,14 @@ class Plans extends React.Component {
 	}
 	componentDidMount = () => {
 		fetch(this.HOST + "plans", {
-			mode: "no-cors"
+			mode: "cors",
 		})
 		.then((response) => {
-			console.log(response)
 			if(!response.ok) {
 				throw Error(response.statusText)
 			}
 			return response
     })
-    .then((response) => response.json())
 		.then((response) => response.json())
 		.then((responseData) => {
 			console.log(responseData)
@@ -28,7 +26,6 @@ class Plans extends React.Component {
 			// alert(err)
 			console.log(err)
 		})
-		// this.props.setPlans(plans)
 	}
 	render () {
 		return (
