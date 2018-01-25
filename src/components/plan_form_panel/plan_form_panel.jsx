@@ -36,7 +36,7 @@ class LocationField extends React.Component {
 
 	set_pin = (e) => {
 		if(e.target.value.length == 0) {
-			return 
+			return
 		}
 		const params = new URLSearchParams()
 		const address = e.target.value.toString()
@@ -59,6 +59,12 @@ class LocationField extends React.Component {
 			if((responseData.status == "ZERO_RESULTS")) {
 				console.log(responseData)
 				console.log("一件もなかった")
+				this.setState({
+					location: {
+						lat: 0,
+						lng: 0
+					}
+				})
 				return
 			}
 			const location = responseData.results[0].geometry.location
@@ -78,7 +84,9 @@ class LocationField extends React.Component {
 				<input id="location" placeholder="北海道旭川市" defaultValue={ this.props.plan.location.name } onChange={ (e) => { this.set_pin(e) } }/>
 				<input id="lat" type="hidden" defaultValue={ this.state.location.lat } />
 				<input id="lng" type="hidden" defaultValue={ this.state.location.lng } />
-				<Map isMarkerShown pin_location = { this.state.location } default_center={ this.state.defaultCenter } />
+				<div className={ styles.map_wrapper }>
+					<Map isMarkerShown pin_location = { this.state.location } default_center={ this.state.defaultCenter } />
+				</div>
 			</div>
 		)
 	}
@@ -104,6 +112,11 @@ class Buttons extends React.Component {
 		plan.departure_date = new Date(departure_date)
 		plan.return_date = new Date(return_date)
 
+
+		if (plan.location.name == "" || plan.location.lat == 0 || plan.location.lng == 0) {
+			alert('目的地が見つかりません。他の名称で入力してください')
+			return
+		}
 		this.props.setPlan(plan)
 		this.props.history.push("/plan/confirm")
 	}
