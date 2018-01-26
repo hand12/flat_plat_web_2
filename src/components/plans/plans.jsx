@@ -8,7 +8,8 @@ class Plans extends React.Component {
 		super(props)
 		this.HOST = "http://localhost:3005/"
 	}
-	componentDidMount = () => {
+
+	fetchPlans = () => {
 		fetch(this.HOST + "plans", {
 			mode: "cors",
 		})
@@ -28,6 +29,7 @@ class Plans extends React.Component {
 		})
 	}
 	render () {
+		this.fetchPlans()
 		return (
 			<div className={ styles.plans }>
 				<Plan { ...this.props } />

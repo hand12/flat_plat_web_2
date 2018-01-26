@@ -1,6 +1,5 @@
 import {
 	SET_PLAN,
-	SET_PLANS,
 } from '../actions/action_types';
 
 const initialState = () => {
@@ -17,7 +16,6 @@ const initialState = () => {
     departure_date: departure_date,
     return_date: return_date,
 		description: '',
-		plans: [],
   }
 }
 
@@ -26,10 +24,6 @@ const initialState = () => {
 const plan = (state = initialState(), action) => {
 	switch(action.type) {
 		case SET_PLAN:
-			return Object.assign({}, state, {
-				...action.payload
-			})
-		case SET_PLANS:
 			return Object.assign({}, state, {
 				...action.payload
 			})
