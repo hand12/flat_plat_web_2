@@ -2,6 +2,15 @@
 @import '../../assets/stylesheets/mixin.scss';
 @import '../../assets/stylesheets/component.scss';
 
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 .input_container {
 	position: relative;
 	margin-bottom: 30px;
@@ -45,13 +54,21 @@
 		position: relative;
 		&:after {
 			z-index: 10;
-			content: '';
+			text-align: center;
+			line-height: 250px;
+			color: white;
+			content: '検索結果が見つかりません';
 			position: absolute;
 			top: 0;
 			left: 0;
 			right: 0;
 			bottom: 0;
 			background: rgba(0, 0, 0, 0.6);
+			animation-name: fadeIn;
+			animation-duration: 1s;
+			animation-timing-function: ease-in;
+			animation-delay: 1s;
+			animation-fill-mode: backwards;
 		}
 	}
 }

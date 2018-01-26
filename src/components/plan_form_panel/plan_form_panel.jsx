@@ -30,7 +30,8 @@ class LocationField extends React.Component {
 			defaultCenter: {
 				lat: 35.9514,
 				lng: 139.975
-			}
+			},
+			showNoResultPanel: false
 		}
 	}
 
@@ -63,7 +64,8 @@ class LocationField extends React.Component {
 					location: {
 						lat: 0,
 						lng: 0
-					}
+					},
+					showNoResultPanel: true
 				})
 				return
 			}
@@ -72,7 +74,8 @@ class LocationField extends React.Component {
 				location: {
 					lat: parseFloat(location.lat),
 					lng: parseFloat(location.lng),
-				}
+				},
+				showNoResultPanel: false
 			})
 		})
 	}
@@ -84,7 +87,7 @@ class LocationField extends React.Component {
 				<input id="location" placeholder="北海道旭川市" defaultValue={ this.props.plan.location.name } onChange={ (e) => { this.set_pin(e) } }/>
 				<input id="lat" type="hidden" defaultValue={ this.state.location.lat } />
 				<input id="lng" type="hidden" defaultValue={ this.state.location.lng } />
-				<div className={ styles.map_wrapper }>
+				<div className={ `${this.state.showNoResultPanel ? styles.map_wrapper : "" } ` }>
 					<Map isMarkerShown pin_location = { this.state.location } default_center={ this.state.defaultCenter } />
 				</div>
 			</div>
