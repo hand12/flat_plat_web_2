@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './plan.scss';
+import formatter from '../common/plan_card/date_formatter'
 
 const Plan = (props) => (
 	<div className={ styles.modal_panel } onClick={ () => (props.history.push('/plan/10/request')) }>
 		<div className={ styles.plan }>
+			{ console.log(props) }
 			<div className={ styles.left_container }>
 				<div className={ styles.image }>
 					<img src="https://pbs.twimg.com/profile_images/919957605002264577/3v0U4Nem.jpg" />
@@ -23,23 +25,17 @@ const Plan = (props) => (
 			</div>
 			<div className={ styles.right_container }>
 				<div className={ styles.top}>
-					<span className={ styles.location }>北海道旭川市</span>
-					<span className={ styles.date }>2018/1/13 ~ 2018/1/14</span>
+					<span className={ styles.location }>{ props.plan.location.name }</span>
+					<span className={ styles.date }>
+						{ formatter(new Date(props.plan.departure_date)) } 〜
+						{ formatter(new Date(props.plan.return_date)) }
+					</span>
 				</div>
 				<div className={ styles.description }>
-					旭川動物園に行きたいです！あと美味しいものをたくさん食べたいです！！
-					<br />
-					旭川動物園に行きたいです！あと美味しいものをたくさん食べたいです！！
-					<br />
-					旭川動物園に行きたいです！あと美味しいものをたくさん食べたいです！！
-					<br />
-					旭川動物園に行きたいです！あと美味しいものをたくさん食べたいです！！
-					<br />
-					旭川動物園に行きたいです！あと美味しいものをたくさん食べたいです！！
-					<br />
+					{ props.plan.description }
 				</div>
 				<div className={ styles.bottom }>
-					投稿日 2018/1/12 20:25
+					投稿日 { props.plan.created_at }
 				</div>
 			</div>
 		</div>

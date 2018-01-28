@@ -1,5 +1,6 @@
 import {
 	SET_PLANS,
+	RECEIVE_PLANS
 } from '../actions/action_types';
 
 const initialState = () => (
@@ -8,13 +9,13 @@ const initialState = () => (
   }
 )
 
-
-
 const plans = (state = initialState(), action) => {
 	switch(action.type) {
 		case SET_PLANS:
+			return state
+		case RECEIVE_PLANS:
 			return Object.assign({}, state, {
-				...action.payload
+				plans: action.payload
 			})
 		default:
 			return state

@@ -23,7 +23,10 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-	return state
+	return {
+		plans: state.plans.plans,
+		plan: state.plan.plan
+	}
 }
 
 const mapDispatchToProps = (dispatch) => {

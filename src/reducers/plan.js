@@ -8,14 +8,16 @@ const initialState = () => {
   return_date.setDate(return_date.getDate() + 1)
 
   return {
-  	location: {
-			name: '',
-			lat: '',
-			lng: ''
-		},
-    departure_date: departure_date,
-    return_date: return_date,
-		description: '',
+		plan: {
+			location: {
+				name: '',
+				lat: '',
+				lng: ''
+			},
+			departure_date: departure_date,
+			return_date: return_date,
+			description: '',
+		}
   }
 }
 
@@ -25,7 +27,7 @@ const plan = (state = initialState(), action) => {
 	switch(action.type) {
 		case SET_PLAN:
 			return Object.assign({}, state, {
-				...action.payload
+				plan: action.payload
 			})
 		default:
 			return state
