@@ -8,6 +8,7 @@ import ConfirmPanel from '../confirm_panel/confirm_panel';
 import Complete from '../complete/complete';
 import Plans from '../plans/plans';
 import Request from '../plans/request';
+import Matches from '../plans/matches'
 
 const RightContainer = (props) => (
 	<div className={ styles.right_container} >
@@ -16,7 +17,8 @@ const RightContainer = (props) => (
 			<Route path="/plan/confirm" component={ () => <ConfirmPanel { ...props }/> } />
 			<Route path="/plan/complete" component={ () => <Complete { ...props }/> } />
 			<Route path="/plan/:id/request" component={ () => <Request { ...props } /> } />
-			<Route path="/plans" component={ () => <Plans { ...props }/> } />
+			<Route path="/users/:user_id/plans/:id/matches_plans" component={ ({ match }) => <Matches { ...props } match={ match } /> } />
+			<Route path="/users/:user_id/plans" component={ () => <Plans { ...props }/> } />
 		</Switch>
 	</div>
 )

@@ -3,9 +3,8 @@ import styles from './plan.scss';
 import formatter from '../common/plan_card/date_formatter'
 
 const Plan = (props) => (
-	<div className={ styles.modal_panel } onClick={ () => (props.history.push('/plan/10/request')) }>
+	<div className={ styles.modal_panel } onClick={ () => (props.history.push(`/users/${ props.plan.id }/plans/1/matches_plans`)) }>
 		<div className={ styles.plan }>
-			{ console.log(props) }
 			<div className={ styles.left_container }>
 				<div className={ styles.image }>
 					<img src="https://pbs.twimg.com/profile_images/919957605002264577/3v0U4Nem.jpg" />

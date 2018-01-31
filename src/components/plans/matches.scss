@@ -1,0 +1,34 @@
+@import '../../assets/stylesheets/variables.scss';
+@import '../../assets/stylesheets/mixin.scss';
+@import '../../assets/stylesheets/component.scss';
+
+.main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.selected_plan {
+  position: fixed;
+  top: auto;
+  left: auto;
+  width: 100%;
+  pointer-events: none;
+}
+
+.matches_plans {
+  position: fixed;
+  top: 250px;
+  left: auto;
+  right: auto;
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.hoge {
+  width: 500px;
+  height: 200px;
+  margin: 10px auto;
+  background: black;
+}

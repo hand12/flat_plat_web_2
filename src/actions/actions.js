@@ -1,12 +1,12 @@
-import { SET_PLAN, SET_PLANS, RECEIVE_PLANS } from './action_types'
+import { SET_FORM, SET_PLANS, RECEIVE_PLANS } from './action_types'
 import { HOST } from '../api_hosts'
 
 import store from '../store'
 
 
-export const setPlan = (payload) => {
+export const setForm = (payload) => {
 	return {
-		type: SET_PLAN,
+		type: SET_FORM,
 		payload
 	}
 }

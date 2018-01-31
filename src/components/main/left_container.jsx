@@ -23,7 +23,7 @@ const LeftContainer = (props) => (
 		</div>
 		<div className={ styles.bottom_buttons }>
 			<span className={ styles.button } onClick={ () => props.history.push("/plan/new") }><i className="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-			<span className={ styles.button } onClick={ () => props.history.push("/plans") }><i className="fa fa-user-circle-o" aria-hidden="true"></i></span>
+			<span className={ styles.button } onClick={ () => props.history.push("/users/10/plans") }><i className="fa fa-user-circle-o" aria-hidden="true"></i></span>
 			<span className={ styles.button } ><i className="fa fa-comments-o" aria-hidden="true"></i></span>
 		</div>
 	</div>

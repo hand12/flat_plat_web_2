@@ -84,7 +84,7 @@ class LocationField extends React.Component {
 		return (
 			<div className={ styles.input_container }>
 				<label htmlFor="location">行き先</label>
-				<input id="location" placeholder="北海道旭川市" defaultValue={ this.props.plan.location.name } onChange={ (e) => { this.set_pin(e) } }/>
+				<input id="location" placeholder="北海道旭川市" defaultValue={ this.props.form.plan.location.name } onChange={ (e) => { this.set_pin(e) } }/>
 				<input id="lat" type="hidden" defaultValue={ this.state.location.lat } />
 				<input id="lng" type="hidden" defaultValue={ this.state.location.lng } />
 				<div className={ `${this.state.showNoResultPanel ? styles.map_wrapper : "" } ` }>
@@ -98,13 +98,13 @@ class LocationField extends React.Component {
 const DescriptionField = (props) => (
 	<div className={ styles.input_container }>
 		<label htmlFor="description">どんな旅にしたいですか？</label>
-		<textarea id="description" placeholder="美味しいものをたくさん食べる旅にしたいです！" rows="2"　defaultValue={ props.plan.description }　/>
+		<textarea id="description" placeholder="美味しいものをたくさん食べる旅にしたいです！" rows="2"　defaultValue={ props.form.plan.description }　/>
 	</div>
 )
 
 class Buttons extends React.Component {
 	onSubmit = () => {
-		let plan = Object.assign({}, this.props.plan)
+		let plan = Object.assign({}, this.props.form.plan)
 		let departure_date = document.getElementById("departure_date").value
 		let return_date = document.getElementById("return_date").value
 
@@ -120,7 +120,7 @@ class Buttons extends React.Component {
 			alert('目的地が見つかりません。他の名称で入力してください')
 			return
 		}
-		this.props.setPlan(plan)
+		this.props.setForm(plan)
 		this.props.history.push("/plan/confirm")
 	}
 

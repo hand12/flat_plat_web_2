@@ -5,7 +5,7 @@ import PlanCard from '../common/plan_card/plan_card';
 
 const ConfirmPanel = (props) => (
 	<div className={ styles.modal_panel }>
-		<PlanCard { ...props }/>
+		<PlanCard { ...props } plan={ props.form.plan }/>
 		<Buttons { ...props }/>
 	</div>
 )
@@ -13,12 +13,12 @@ const ConfirmPanel = (props) => (
 class Buttons extends React.Component {
 	postPlan = () => {
 		var formData = new FormData()
-		formData.append("plan[departure_date]", this.props.plan.departure_date)
-		formData.append("plan[return_date]", this.props.plan.return_date)
-		formData.append("plan[description]", this.props.plan.description)
-		formData.append("location[name]", this.props.plan.location.name)
-		formData.append("location[latitude]", this.props.plan.location.lat)
-		formData.append("location[longitude]", this.props.plan.location.lng)
+		formData.append("plan[departure_date]", this.props.form.plan.departure_date)
+		formData.append("plan[return_date]", this.props.form.plan.return_date)
+		formData.append("plan[description]", this.props.form.plan.description)
+		formData.append("location[name]", this.props.form.plan.location.name)
+		formData.append("location[latitude]", this.props.form.plan.location.lat)
+		formData.append("location[longitude]", this.props.form.plan.location.lng)
 
 		const HOST = "http://localhost:3005/"
 		fetch(HOST + "plans", {

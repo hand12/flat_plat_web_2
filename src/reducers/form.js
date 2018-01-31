@@ -1,5 +1,5 @@
 import {
-	SET_PLAN,
+	SET_FORM,
 } from '../actions/action_types';
 
 const initialState = () => {
@@ -25,7 +25,7 @@ const initialState = () => {
 
 const plan = (state = initialState(), action) => {
 	switch(action.type) {
-		case SET_PLAN:
+		case SET_FORM:
 			return Object.assign({}, state, {
 				plan: action.payload
 			})
