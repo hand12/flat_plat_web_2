@@ -19,17 +19,17 @@ class Matches extends React.Component {
 		return (
 			<div className={ styles.main }>
 				<div className={ styles.selected_plan }>
-					<Plan plan={ plan } { ...this.props }/>
+					<Plan plan={ plan } { ...this.props } isCurrentUser={ true } />
 				</div>
 				<div className={ styles.matches_plans }>
-					<div className={ styles.hoge }></div>
-					<div className={ styles.hoge }></div>
-					<div className={ styles.hoge }></div>
-					<div className={ styles.hoge }></div>
-					<div className={ styles.hoge }></div>
-					<div className={ styles.hoge }></div>
-					<div className={ styles.hoge }></div>
-					<div className={ styles.hoge }></div>
+					<div className={ styles.scroll_box }>
+						<Plan plan={ plan } { ...this.props } isCurrentUser={ false } />
+						<Plan plan={ plan } { ...this.props } isCurrentUser={ false } />
+						<Plan plan={ plan } { ...this.props } isCurrentUser={ false } />
+						<Plan plan={ plan } { ...this.props } isCurrentUser={ false } />
+						<Plan plan={ plan } { ...this.props } isCurrentUser={ false } />
+						<Plan plan={ plan } { ...this.props } isCurrentUser={ false } />
+					</div>
 				</div>
 			</div>
 		)

@@ -12,23 +12,21 @@
   position: fixed;
   top: auto;
   left: auto;
-  width: 100%;
+  width: calc(100vw - #{ $left_container-size });
   pointer-events: none;
 }
 
 .matches_plans {
   position: fixed;
-  top: 250px;
-  left: auto;
-  right: auto;
-  width: 100%;
-  padding: 20px;
-  overflow: hidden;
+	top: 290px;
+	bottom: 0;
+	left: auto;
+	padding-top: 60px;
+	width: calc(100vw - #{ $left_container-size });
+	overflow-y: scroll;
 }
 
-.hoge {
-  width: 500px;
-  height: 200px;
-  margin: 10px auto;
-  background: black;
+.scroll_box {
+	width: 80%;
+	margin: 0 auto;
 }
