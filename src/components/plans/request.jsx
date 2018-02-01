@@ -6,6 +6,7 @@ import PlanCard from '../common/plan_card/plan_card';
 const Request = (props) => (
 	<div className={ styles.modal_panel }>
 		<div className={ styles.plan_cards }>
+			{ console.log(props) }
 			<PlanCard { ...props } />
 			<PlanCard { ...props } />
 			<div className={ styles.arrow }></div>

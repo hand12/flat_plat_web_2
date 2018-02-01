@@ -5,10 +5,9 @@ import styles from './plan.scss';
 import formatter from '../common/plan_card/date_formatter'
 import { HOST } from '../../api_hosts'
 
-const Plan = (props) => (
-	// <Link to='/users/1/plans/1/matches'>
-	<Link to= { props.link }>
-		<div className={ styles.modal_panel }>
+const Detail = (props) => (
+	<Link to='users/1/plans/1/matches'>
+		<div className={ styles.modal_panel } onClick={ () => props.history.push(`/users/1/plans/${ props.plan.id }/requests/1`) }>
 			<div className={ styles.plan }>
 				<div className={ styles.left_container }>
 					<div className={ styles.image }>
@@ -47,4 +46,4 @@ const Plan = (props) => (
 	</Link>
 )
 
-export default Plan;
+export default Detail;

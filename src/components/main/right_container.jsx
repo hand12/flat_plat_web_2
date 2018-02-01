@@ -13,12 +13,12 @@ import Matches from '../plans/matches'
 const RightContainer = (props) => (
 	<div className={ styles.right_container} >
 		<Switch>
-			<Route path="/plan/new" component={ () => <PlanFormPanel { ...props }/> } />
-			<Route path="/plan/confirm" component={ () => <ConfirmPanel { ...props }/> } />
-			<Route path="/plan/complete" component={ () => <Complete { ...props }/> } />
-			<Route path="/users/:user_id/plans/:plan_id/requests/:id" component={ () => <Request { ...props } /> } />
-			<Route path="/users/:user_id/plans/:id/matches" component={ ({ match }) => <Matches { ...props } match={ match } /> } />
-			<Route path="/users/:user_id/plans" component={ () => <Plans { ...props }/> } />
+			<Route exact path="/plan/new" component={ () => <PlanFormPanel { ...props }/> } />
+			<Route exact path="/plan/confirm" component={ () => <ConfirmPanel { ...props }/> } />
+			<Route exact path="/plan/complete" component={ () => <Complete { ...props }/> } />
+			<Route exact path="/users/:user_id/plans/:plan_id/requests/:id" component={ () => <Request { ...props } /> } />
+			<Route exact path="/users/:user_id/plans/:id/matches" component={ ({ match }) => <Matches { ...props } match={ match } /> } />
+			<Route exact path="/users/:user_id/plans" component={ () => <Plans { ...props }/> } />
 		</Switch>
 	</div>
 )

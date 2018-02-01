@@ -7,7 +7,6 @@
 	margin-bottom: 50px;
 	transition: 0.2s;
 	position: relative;
-	background: white;
 	&:hover {
 		cursor: pointer;
 		transform: scale(1.05);
@@ -33,7 +32,6 @@ $container-size: 200px;
 .image {
 	@include border-gradient-image(120px);
 	margin: 10px 0;
-	z-index: 1;
 }
 
 .name {
