@@ -6,7 +6,7 @@ import Plan from './plan';
 const Plans = (props) => (
 	<div className={ styles.plans }>
 		{ props.plans.map((plan) => {
-			return <Plan { ...props } plan={ plan } key={ plan.id } isCurrentUser={ true } />
+			return <Plan { ...props } plan={ plan } key={ plan.id } />
 		})}
 	</div>
 )

@@ -17,7 +17,7 @@ const RightContainer = (props) => (
 			<Route path="/plan/confirm" component={ () => <ConfirmPanel { ...props }/> } />
 			<Route path="/plan/complete" component={ () => <Complete { ...props }/> } />
 			<Route path="/users/:user_id/plans/:plan_id/requests/:id" component={ () => <Request { ...props } /> } />
-			<Route path="/users/:user_id/plans/:id/matches_plans" component={ ({ match }) => <Matches { ...props } match={ match } /> } />
+			<Route path="/users/:user_id/plans/:id/matches" component={ ({ match }) => <Matches { ...props } match={ match } /> } />
 			<Route path="/users/:user_id/plans" component={ () => <Plans { ...props }/> } />
 		</Switch>
 	</div>
