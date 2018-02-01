@@ -6,7 +6,6 @@ import formatter from '../common/plan_card/date_formatter'
 import { HOST } from '../../api_hosts'
 
 const Plan = (props) => (
-	// <Link to='/users/1/plans/1/matches'>
 	<Link to= { props.link }>
 		<div className={ styles.modal_panel }>
 			<div className={ styles.plan }>

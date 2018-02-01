@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import * as ActionCreators from './actions/actions'
+import * as FetchPlanActionCreators from './actions/fetch/plan'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -24,13 +25,15 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
 	return {
+		fetch: state.fetch,
 		plans: state.plans.plans,
 		form: state.form
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(ActionCreators, dispatch)
+	// return bindActionCreators(ActionCreators, dispatch)
+	return bindActionCreators(Object.assign({}, ActionCreators, FetchPlanActionCreators), dispatch)
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

@@ -43,6 +43,7 @@
 }
 
 .image {
+	z-index: 0;
 	@include border-gradient-image(150px);
 }
 

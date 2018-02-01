@@ -7,7 +7,6 @@ class PlanCard extends React.Component {
 	render () {
 		return (
 			<div className={ styles.card } id="js-card">
-				{ console.log(this.props) }
 				<div className={ styles.image }>
 					<img src="https://pbs.twimg.com/profile_images/919957605002264577/3v0U4Nem.jpg" />
 				</div>
